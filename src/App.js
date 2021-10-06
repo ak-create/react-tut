@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React,{useRef} from 'react'; 
+import {useState} from 'react'; //ye ek hook hai
 import './App.css';
+import Student from './Student';
+import react from 'react';
+import Profile from './Profile';
+import User from './User';
+function App(){
+ 
+  const [data,setData]=useState(0);
 
-function App() {
+  useEffect(() => {
+    console.warn("useeffect")
+  })
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>{data}</h1>
+
+     <button onClick={()=>{setData(data+1)}}>Toggle</button>
+     <button onClick={()=>{this.setState({so:!this.state.so})}}>Toggle2</button>
     </div>
   );
+  
 }
 
 export default App;
